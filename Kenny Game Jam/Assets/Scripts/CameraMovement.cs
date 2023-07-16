@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+   This script manages the camera's movement & position
+*/
 public class CameraMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public Transform cameraPos;
 
-    // Update is called once per frame
+    
     void Update()
     {
         transform.position = cameraPos.position; 

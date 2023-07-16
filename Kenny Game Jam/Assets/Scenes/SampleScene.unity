@@ -13809,11 +13809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb365d6123dff8a4fa6a1f983f7ee1f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heartObjs:
-  - {fileID: 734304034955588634}
-  - {fileID: 147809923}
-  - {fileID: 452295548}
-  - {fileID: 98857450}
+  tallyItem: 4
 --- !u!4 &1652230954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5251686547518768775, guid: c9cc7ac5e4e01d24cbe78410b4c58a53, type: 3}
@@ -18053,5 +18049,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'heart '
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3932912414108061023, guid: e856fe2bff25a5041ba79dc41987cf09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e856fe2bff25a5041ba79dc41987cf09, type: 3}
+--- !u!114 &3951009928630935814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734304034955588634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb365d6123dff8a4fa6a1f983f7ee1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tallyItem: 0

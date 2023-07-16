@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+/*
+   This script manages the player's movement 
+*/
 public class PlayerMovement : MonoBehaviour
 {
     
@@ -33,7 +36,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float airMultiply;
     [SerializeField] private bool jumpReadiness = false;
     [SerializeField] private bool canJump = true;
-     
+
+    private float num = 0f, num1 = 10f, num2 = 0.5f, num3 = 0.2f;
+    
     void Start()
     {
         StartPoint();
@@ -77,17 +82,17 @@ public class PlayerMovement : MonoBehaviour
         
         if (grounded == true)//on the ground
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * num1, ForceMode.Force);
         }
         else if(grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiply, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * num1 * airMultiply, ForceMode.Force);
         }
     }
 
     void Grounded()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * num2 + num3, whatIsGround);
         
         //Manages Dragging Function 
         if (grounded)
@@ -96,13 +101,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            rb.drag = 0;
+            rb.drag = num;
         }
     }
 
     void SpeedControl()
     {
-        Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        Vector3 flatVelocity = new Vector3(rb.velocity.x, num, rb.velocity.z);
 
         //limit the velocity as needed 
         if (flatVelocity.magnitude > moveSpeed)
@@ -115,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         //reset vertical velicity 
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.velocity = new Vector3(rb.velocity.x, num, rb.velocity.z);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
