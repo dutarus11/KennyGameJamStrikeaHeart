@@ -7,24 +7,40 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     float currentTime= 0f;
-    float beginTime = 60f;
-
+    float beginTime = 10f;
+    float num = 0, num1 = 1, num2 = 0;
+    
     [SerializeField] Text countDownTxt;
 
-    private void Start()
+    private void Start() 
     {
-        currentTime = beginTime;      
+        StartingTime();
     }
 
     private void Update()
     {
-        currentTime -= 1 * Time.deltaTime;
+       UpdatingTime();
+    }
+
+    private void StartingTime()
+    {
+        currentTime = beginTime;
+    }
+
+    private void UpdatingTime()
+    {
+        currentTime -= num1 * Time.deltaTime;
         countDownTxt.text = currentTime.ToString("0");
 
-        if (currentTime <= 0)
+        if (currentTime <= num)
         {
-            currentTime  = 0;
+            currentTime = num;
+
         }
-        
+        if (currentTime <= num2)
+        {
+            Debug.Log("Reset succeeds!");
+            //SceneManager.LoadScene("TitleScene");
+        }
     }
 }
