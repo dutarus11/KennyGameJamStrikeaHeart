@@ -4,7 +4,7 @@ using System.Data.Common;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class Timer : MonoBehaviour
+public class Timer : Loading
 {
     float currentTime= 0f;
     float beginTime = 10f;
@@ -35,12 +35,11 @@ public class Timer : MonoBehaviour
         if (currentTime <= num)
         {
             currentTime = num;
-
         }
         if (currentTime <= num2)
         {
             Debug.Log("Reset succeeds!");
-            //SceneManager.LoadScene("TitleScene");
+            LoadingScene();           
         }
     }
 }
