@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Timer : Loading
 {
     float currentTime= 0f;
-    float beginTime = 10f;
+    float beginTime = 60f;
     float num = 0, num1 = 1, num2 = 0;
     
     [SerializeField] Text countDownTxt;

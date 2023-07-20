@@ -2,18 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
-   This script tracks the number of items/hearts 
+   This script tracks the number of items/hearts with the singleton approach 
 */
-public class ItemTracker : MonoBehaviour
+public class ItemTracker : Win
 {
         
     [SerializeField]
     private int itemTrackingNum = 0;
-
+    
+    
+    
     private static ItemTracker itemNumInstance;
 
+    private void Update()
+    {
+        WinningItemCounterNum();
+    }
     public int ItemCounter
     {
         get { return itemTrackingNum; } set { itemTrackingNum = value; }
@@ -32,5 +39,13 @@ public class ItemTracker : MonoBehaviour
             return;
         }
         itemNumInstance = this;
+    }
+
+    void WinningItemCounterNum()
+    {
+        if (itemTrackingNum == 2)
+        {
+            WinningCondition();
+        }
     }
 }
