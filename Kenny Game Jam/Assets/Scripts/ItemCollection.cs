@@ -8,21 +8,15 @@ using UnityEngine;
 */
 public class ItemCollection : MonoBehaviour
 {
-    
-   // public int tallyItem = 0;
-    [SerializeField] private GameObject item;
-    //public int hearts;
-
+       
+    [SerializeField] private GameObject item;    
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Item"))
         {
-            Debug.Log("Item collected!");
-            
+            Debug.Log("Item collected!");            
             Destroy(this.gameObject);
-            OnDestroy();
-            //tallyItem++;
-            
+            OnDestroy();                       
         }
     }
 

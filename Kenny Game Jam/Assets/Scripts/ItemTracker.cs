@@ -12,9 +12,8 @@ public class ItemTracker : Win
         
     [SerializeField]
     private int itemTrackingNum = 0;
-    
-    
-    
+    private float maxNum = 2f;
+     
     private static ItemTracker itemNumInstance;
 
     private void Update()
@@ -43,7 +42,7 @@ public class ItemTracker : Win
 
     void WinningItemCounterNum()
     {
-        if (itemTrackingNum == 2)
+        if (itemTrackingNum == maxNum)
         {
             WinningCondition();
         }
