@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 /*
    This script manages the player's movement 
 */
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Loading
 {
     
     [Header("Movement")]
@@ -73,6 +73,13 @@ public class PlayerMovement : MonoBehaviour
             Jump();
             Invoke(nameof(ResetJump), jumpCoolDown);
         }
+
+        //escape
+        if (Input.GetKeyDown("escape"))
+        {
+            LoadingTitleScene();
+        }
+
     }
 
     void Movement() 

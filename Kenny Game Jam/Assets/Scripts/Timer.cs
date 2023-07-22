@@ -4,25 +4,30 @@ using System.Data.Common;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+/*
+   This script manages timer 
+*/
 public class Timer : Loading
 {
-    float currentTime= 0f;
-    float beginTime = 60f;
-    float num = 0, num1 = 1, num2 = 0;
+    public float currentTime= 0f;
+    public float beginTime = 10f;
+      
+    public float num = 0, num1 = 1, num2 = 0;
     
     [SerializeField] Text countDownTxt;
-
-    private void Start() 
+    
+    public void Start() 
     {
-        StartingTime();
+        StartingTime();       
     }
 
-    private void Update()
+    public void Update()
     {
        UpdatingTime();
     }
 
-    private void StartingTime()
+    public void StartingTime()
     {
         currentTime = beginTime;
     }
@@ -41,5 +46,23 @@ public class Timer : Loading
             Debug.Log("Reset succeeds!");
             LoadingScene();           
         }
+        
+    }
+
+    public void UpdatingWinSceneTime()
+    {
+        beginTime = 5; 
+        currentTime -= num1 * Time.deltaTime;        
+        
+
+        if (currentTime <= num)
+        {
+            currentTime = num;
+        }
+        if (currentTime <= num2)
+        {            
+            ExitGame();
+        }
+
     }
 }

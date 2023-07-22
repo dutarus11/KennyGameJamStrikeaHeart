@@ -12,7 +12,7 @@ public class Win : Loading
     [SerializeField]
     private GameObject winningTxt;
 
-    private float waitingTime = 8f;
+    private float waitingTime = 10f;
     private float seconds = 1f; 
     public void WinningCondition()
     {
@@ -25,6 +25,6 @@ public class Win : Loading
     {        
         yield return new WaitForSeconds(seconds);
         waitingTime -= seconds;
-        ExitGame();
+        LoadingWinScene();
     }
 }

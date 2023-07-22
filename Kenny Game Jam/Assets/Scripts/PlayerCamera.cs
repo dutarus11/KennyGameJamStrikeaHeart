@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+
+/*
+   This script manages the player camera
+*/
 public class PlayerCamera : MonoBehaviour
 {
 
