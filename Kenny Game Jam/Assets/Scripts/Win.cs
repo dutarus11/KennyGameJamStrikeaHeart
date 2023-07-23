@@ -9,15 +9,12 @@ using UnityEngine.SceneManagement;
 */
 public class Win : Loading
 {
-    [SerializeField]
-    private GameObject winningTxt;
-
+    
     private float waitingTime = 10f;
     private float seconds = 1f; 
     public void WinningCondition()
     {
         Debug.Log("Winning Condition UI succeeded!");
-        winningTxt.SetActive(true);
         StartCoroutine(WaitTime());
     }
 

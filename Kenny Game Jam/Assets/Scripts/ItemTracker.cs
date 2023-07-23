@@ -12,7 +12,7 @@ public class ItemTracker : Win
         
     [SerializeField]
     private int itemTrackingNum = 0;
-    private float maxNum = 2f;
+    private float maxNum = 10f;
      
     private static ItemTracker itemNumInstance;
 
